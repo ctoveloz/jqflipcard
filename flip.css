@@ -1,0 +1,75 @@
+body
+{
+font-family: Arial;
+font-size: 90%;
+}
+
+.flipCard {
+width: 500px;
+margin: auto;
+position: relative;
+height: 194px;
+}
+
+#front{ z-index:100; }
+#back{ z-index:1; opacity:0; filter: alpha(opacity=0); -moz-transform:rotateY(180deg); -webkit-transform:rotateY(180deg); transform:rotateY(180deg); }
+.flipped #front{ opacity:0; filter: alpha(opacity=0); -moz-transform:rotateY(-180deg); -webkit-transform:rotateY(-180deg); transform:rotateY(-180deg); }
+.flipCard.flipped #back{ opacity:1; filter: alpha(opacity=100); -moz-transform:rotateY(0deg); -webkit-transform:rotateY(0deg); transform:rotateY(0deg); }
+.flipCard div { width:100%; height:100%; position:absolute; top:0; left:0;
+
+/* Enabling 3d space for the transforms */
+-moz-transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+
+/* When the divs are flipped, they will be hidden */
+-moz-backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+
+/* Enabling a smooth animated transition */
+-moz-transition:0.8s;
+-webkit-transition:0.8s;
+transition:0.8s;
+
+/* Configure a keyframe animation for Firefox */
+-moz-animation: pulse 2s infinite;
+
+/* Configure it for Chrome and Safari */
+-webkit-animation: pulse 2s infinite;
+}
+
+/* Styles not-relevant to the flip animation just for demo purposes */
+.basic_info img {
+float: left;
+width: 150px;
+margin: 10px;
+border: 1px solid white;
+box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+.basic_info h1, .basic_info h2, .basic_info h3 {
+line-height: 1.2em;
+margin: 0;
+padding: 0;
+}
+
+.basic_info h1
+{
+margin-top: 10px;
+}
+
+
+#back, #front {
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0,0,0,.2);
+border-radius: 10px;
+}
+
+#back {
+background: url('http://static.lasuricata.com/res/backdrops/1280/3dd0e27fd64149318476ae821f1dd13e.jpg') no-repeat center top; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
